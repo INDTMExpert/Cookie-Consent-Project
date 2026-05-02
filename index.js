@@ -2,6 +2,10 @@ const modal = document.getElementById("modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 const consentForm = document.getElementById("consent-form");
 const modalText = document.getElementById("modal-text");
+const modalBtn = document.getElementById("modal-btn");
+const reverseBtn = document.getElementById("modal-choice-btns");
+
+
 setTimeout(function () {
   modal.style.display = "inline";
 }, 1500);
@@ -9,6 +13,13 @@ setTimeout(function () {
 modalCloseBtn.addEventListener("click", function () {
   modal.style.display = "none";
 });
+
+// form btn reverse when hover (mouseenter)
+modalBtn.addEventListener('mouseenter',function(){
+  reverseBtn.classList.toggle('reversebtn')  //classList gives all the classes access we created.toogle is action we want to perform.
+});                                          //class name of Css in bracket we want to use
+
+
 
 consentForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -35,5 +46,6 @@ consentForm.addEventListener("submit", function (e) {
                                                 <div class="idiot-gif">
                                                     <img src="images/pirate.webp">
                                                 </div> `;
+    modalCloseBtn.disabled = false;
   }, 3000);
 });
